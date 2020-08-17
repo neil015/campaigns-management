@@ -1,0 +1,327 @@
+@import './utility.scss';
+
+.App {
+    padding: 0 10px;
+    .app-header {
+        margin: 0 -10px 10px;
+        background-color: #1F2640;
+        padding: 5px 10px;
+        p {
+            margin: 5px 0;
+            &.header-text {
+                color: $white;
+            }
+            &.header-text-green {
+                color: $green;
+            }
+        }
+    }
+
+    .fixers-wrapper {
+        display: table;
+        width: 100%;
+        margin-bottom: 15px;
+        .fixers-heading {
+            color: $blackish-color;
+            display: table-cell;
+            width: 50%;
+        }
+        .change-lang-cont {
+            display: table-cell;
+            width: 50%;
+            text-align: right;
+            .change-lang-btn {
+                padding: 5px 10px;
+                background-color: $white;
+                color: $blackish-color;
+                border: 1px solid $blackish-color;
+            }
+        }
+    }
+
+    .tabs {
+        border-bottom: 1px solid #d3d3d3;
+        margin-bottom: 25px;
+        color: #556789;
+        .tab {
+            display: inline-block;
+            padding: 10px 0;
+            margin-right: 10px;
+            .link{
+                color: #808080;
+                padding: 10px;
+                cursor: pointer;
+            }
+            &.active {
+                border-bottom: 2px solid $green;
+                .link{
+                    color: $green;
+                }
+            }
+        }
+    }
+    
+    .fixers-data {
+        width: 100%;
+        border-spacing: 0;
+        box-shadow: 1px 6px 7px -1px lightgrey;
+        color: #556789;
+        position: relative;
+        font-size: 16px;
+        p {
+            margin: 5px 0 10px;
+        }
+        .days-ago {
+            font-size: 12px;
+            font-style: italic;
+        }
+        thead {
+            background-color: $light-white;
+        }
+        th {
+            text-align: left;
+            padding: 8px 10px;
+            color: #808080;
+        }
+        .c-row {
+            .c-date, .view-fixers-pricing {
+                width: 15%;
+            }
+            .c-detail {
+                width: 30%;
+            }
+            .c-act {
+                width: 40%;
+            }
+            .c-date, .c-detail, .view-fixers-pricing, .c-act {
+                padding: 10px;
+                border-bottom: 1px solid $light-white;
+            }
+            .c-detail {
+                .c-img, .c-info {
+                    display: inline-block;
+                }
+                .c-img {
+                    margin-right: 10px;
+                    i {
+                        display: inline-block;
+                        height: 50px;
+                        width: 50px;
+                        background-size: cover;
+                    }
+                } 
+            }
+            .view-fixers-pricing {
+                .view-pricing {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    .view-pricing-icon {
+                        display: table-cell;
+                        i {
+                            display: inline-block;
+                            height: 25px;
+                            width: 25px;
+                            background: url('../assests/Price.png');
+                            background-size: cover;
+                            margin-right: 5px;
+                            vertical-align: -5px;
+                        }
+                    }
+                    .view-pricing-text {
+                        display: table-cell;
+                    }
+                }
+            }
+            .c-act {
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    color: #808080;
+                }
+                i {
+                    display: inline-block;
+                    height: 25px;
+                    width: 25px;
+                    background-size: cover;
+                    vertical-align: bottom;
+                    margin-right: 5px;
+                }
+                .csv {
+                    display: inline-block;
+                    margin-right: 30px;
+                    i {
+                        background-image: url('../assests/file.png');
+                    }
+                }
+                .report {
+                    display: inline-block;
+                    margin-right: 30px;
+                    i {
+                        background-image: url('../assests/statistics-report.png');
+                    }
+                }
+                .schedule-agn {
+                    cursor: pointer;
+                    display: inline-block;
+                    i {
+                        background-image: url('../assests/calendar.png');
+                    }
+                }
+            }
+        }
+    }
+
+    .react-calendar {
+        position: absolute;
+        right: 20px;
+    }
+
+    .pricing-modal {
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        background-color: $white;
+        color: #808080;
+        padding: 10px;
+        box-shadow: 2px 2px 6px 1px lightgrey;
+        p {
+            margin: 0 0 15px;
+        }
+        .popup-header {
+            .popup-img {
+                display: inline-block;
+                height: 100px;
+                width: 100px;
+                background-size: cover;
+                margin-right: 10px;
+            }
+            .popup-content {
+                display: inline-block;
+                .name {
+                    font-weight: bold;
+                    color: $blackish-color;
+                }
+            }
+        }
+        .popup-body {
+            .heading {
+                color: $blackish-color;
+                margin-top: 0;
+            }
+            .content {
+                display: table;
+                margin-bottom: 20px;
+                width: 100%;
+                .period, .price {
+                    display: table-cell;
+                    width: 50%;
+                }
+                .price {
+                    text-align: right;
+                }
+            }
+        }
+        .popup-footer {
+            .button-container {
+                text-align: center;
+                .close-modal {
+                    background-color: $white;
+                    color: $blackish-color;
+                    padding: 5px 10px;
+                    border: 1px solid $blackish-color;
+                }
+            }
+        }
+    }
+}
+
+.fire {
+    background-image: url('../assests/Bitmap-garenafreefire.png');
+}
+
+.nfs {
+    background-image: url('../assests/Bitmap-needforspeed.png');
+}
+
+.chess {
+    background-image: url('../assests/Bitmap-autochess.png');
+}
+
+.pubg {
+    background-image: url('../assests/Bitmap-pubgmobile.png');
+}
+
+.flower {
+    background-image: url('../assests/Bitmap-flowfree.png');
+}
+
+.kombat {
+    background-image: url('../assests/Bitmap-mortalkombat.png');
+}
+
+.swar {
+    background-image: url('../assests/Bitmap-summonerswar.png');
+}
+
+.fight {
+    background-image: url('../assests/Bitmap-shadowfight.png');
+}
+// handling Device specific CSS
+@media screen and (max-width: 729px) {
+    .App {
+        div {
+            .fixers-wrapper {
+                display: block;
+                margin-bottom: 15px;
+                .fixers-heading {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                .change-lang-cont {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+
+            .fixers-data {
+                .c-row {
+                    .c-act {
+                        .report {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+
+            .pricing-modal {
+                top: 35%;
+                left: 10%;
+            }
+        }
+    }
+}
+
+// for Big devices
+@media screen and (max-width: 991px) {
+    .App {
+        .fixers-data {
+            .c-row {
+                .view-fixers-pricing {
+                    .view-pricing {
+                        margin-top: 5px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                .c-act {
+                    .schedule-agn {
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
